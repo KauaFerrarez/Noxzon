@@ -1,8 +1,11 @@
-const sequelize = require('sequelize')
+// Conexão desativada temporariamente (sem banco de dados)
 
-const connection  = new sequelize('cadastrouser' , 'root' , '', {
-    host: 'localhost',
-    dialect: 'mysql'
-} )
+const { Sequelize } = require('sequelize');
 
-module.exports = connection
+// Cria conexão "fake" em memória só pra evitar erros
+const connection = new Sequelize({
+  dialect: 'sqlite',
+  storage: ':memory:' // usa memória temporária (não cria arquivo)
+});
+
+module.exports = connection;

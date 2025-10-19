@@ -1,21 +1,23 @@
-const sequelize = require('sequelize')
-const connection = require('../database/conection')
+const { Sequelize } = require('sequelize');
+const connection = require('./conection');
 
-const usuario = connection.define('usuarios' , {
-    email:{
-        type: sequelize.STRING,
-        allowNull: false
-    },
-    senha:{
-        type: sequelize.STRING,
-        allowNull: false
-    },
-    senha_2:{
-        type: sequelize.STRING,
-        allowNull: false
-    }
-})
+// Cria uma estrutura simples pra simular o modelo (sem banco real)
+const usuario = connection.define('usuarios', {
+  email: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  senha: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  senha_2: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+});
 
-//usuario.sync({force: false}).then(() => {});
+// Não sincroniza o banco (evita erro no Render)
+ // usuario.sync({ force: false }).then(() => {});
 
-module.exports = usuario
+module.exports = usuario;
