@@ -117,7 +117,6 @@ app.get('/o-progresso-episodio-5' , (req , res)=>{
     res.render('page/episodio-5')
 })
 
-
 //INICIANDO O SERVIDOR
 app.listen(port , ()=>{
     console.log('Servidor Online!!')
