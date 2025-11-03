@@ -7,6 +7,8 @@ const connection = require('./database/conection')
 const cadastroUser = require('./database/cadastro_usuario')
 const usuario = require('./database/cadastro_usuario')
 
+app.use(express.static('public'))
+
 
 //configurando body-parser
 app.use(bodyparser.urlencoded({extended:false}))
