@@ -8,6 +8,7 @@ const cadastroUser = require('./database/cadastro_usuario')
 const usuario = require('./database/cadastro_usuario')
 
 app.use(express.static('public'))
+app.use('/video', express.static('video'));
 
 
 //configurando body-parser
