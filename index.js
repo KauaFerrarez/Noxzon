@@ -130,6 +130,11 @@ app.get('/o-progresso-temporada-2-episodio-2' , (req , res)=>{
     res.render('page/temporada-2-episodio-2')
 })
 
+//Rota para o progresso temporada 2 episódio 3
+app.get('/o-progresso-temporada-2-episodio-3' , (req , res)=>{
+    res.render('page/temporada-2-episodio-3')
+})
+
 //INICIANDO O SERVIDOR
 app.listen(port , ()=>{
     console.log('Servidor Online!!')
