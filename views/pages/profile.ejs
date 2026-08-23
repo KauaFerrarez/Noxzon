@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Noxzon</title>
+
+    <link rel="stylesheet" href="/css/nx-style.css">
+    <link rel="icon" href="/img/noxzon-logo.jpg">
+
+</head>
+<body>
+
+    <%- include("../partes/navbar") %>
+
+    <section class="profile-page">
+
+        <div class="profile-card">
+
+            <div class="profile-avatar">
+                N
+            </div>
+
+            <h1>
+                <%= user.username %>
+            </h1>
+
+            <p>
+                <%= user.email %>
+            </p>
+
+            <div class="profile-buttons">
+
+                <a href="#">
+                    <button>
+                        Continuar assistindo
+                    </button>
+                </a>
+
+                <a href="/logout">
+                    <button class="logout-profile">
+                        Sair
+                    </button>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <%- include("../partes/footer") %>
+
+</body>
+</html>

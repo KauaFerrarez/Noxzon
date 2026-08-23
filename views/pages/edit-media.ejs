@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Noxzon</title>
+
+    <link rel="stylesheet" href="/css/nx-style.css">
+    <link rel="icon" href="/img/noxzon-logo.jpg">
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+</head>
+<body>
+    <%- include("../partes/navbar") %>
+
+    <div class="admin-layout">
+
+        <!-- SIDEBAR -->
+
+        <aside class="admin-sidebar">
+
+            <div class="admin-logo">
+
+                <h1>Noxzon</h1>
+
+                <span>ADMIN</span>
+
+            </div>
+
+            <nav class="admin-nav">
+
+                <a href="/admin">
+                    <i class="fa-solid fa-square-plus"></i>
+                    Adicionar mídia
+                </a>
+
+                <a
+                href="/admin/media"
+                class="active-admin"
+                >
+                    <i class="fa-solid fa-film"></i>
+                    Gerenciar mídias
+                </a>
+
+            </nav>
+
+            <a href="/logout" class="admin-logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Sair
+
+            </a>
+
+        </aside>
+
+        <!-- CONTENT -->
+
+        <main class="admin-content">
+
+            <div class="admin-top">
+
+                <div>
+
+                    <h1>Editar mídia</h1>
+
+                    <p>
+                        Atualize informações da mídia.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="admin-box-modern">
+
+                <form
+                action="/admin/update/<%= media._id %>"
+                method="POST"
+                class="admin-form"
+                >
+
+                    <div class="admin-input-group">
+
+                        <label>Título</label>
+
+                        <input
+                        type="text"
+                        name="title"
+                        value="<%= media.title %>"
+                        required
+                        >
+
+                    </div>
+
+                    <div class="admin-input-group">
+
+                        <label>Descrição</label>
+
+                        <textarea
+                        name="description"
+                        required
+                        ><%= media.description %></textarea>
+
+                    </div>
+
+                    <div class="admin-grid">
+
+                        <div class="admin-input-group">
+
+                            <label>Tipo</label>
+
+                            <input
+                            type="text"
+                            name="type"
+                            value="<%= media.type %>"
+                            required
+                            >
+
+                        </div>
+
+                        <div class="admin-input-group">
+
+                            <label>Categoria</label>
+
+                            <input
+                            type="text"
+                            name="category"
+                            value="<%= media.category %>"
+                            required
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <div class="admin-input-group">
+
+                        <label>Imagem URL</label>
+
+                        <input
+                        type="text"
+                        name="image"
+                        value="<%= media.image %>"
+                        required
+                        >
+
+                    </div>
+
+                    <div class="admin-input-group">
+
+                        <label>Link do YouTube</label>
+
+                        <input
+                        type="text"
+                        name="youtubeLink"
+                        value="<%= media.youtubeLink %>"
+                        required
+                        >
+
+                    </div>
+
+                    <button
+                    type="submit"
+                    class="admin-submit"
+                    >
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Salvar alterações
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <%- include("../partes/footer") %>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Noxzon
+    </title>
+
+    <link
+    rel="stylesheet"
+    href="/css/nx-style.css">
+
+    <link rel="icon" href="/img/noxzon-logo.jpg">
+
+</head>
+<body>
+
+    <%- include("../partes/navbar") %>
+
+    <section class="catalog-section">
+
+        <h2>
+            Continuar assistindo
+        </h2>
+
+        <div class="catalog-grid">
+
+            <% continueWatching.forEach(item => { %>
+
+                <% if(item.media){ %>
+
+                <a
+                href="/watch/<%= item.media._id %>"
+                class="media-card"
+                >
+
+                    <img
+                    src="<%= item.media.image %>"
+                    alt="<%= item.media.title %>"
+                    >
+
+                    <div class="media-info">
+
+                        <span class="media-type">
+
+                            Continuar assistindo
+
+                        </span>
+
+                        <h3>
+                            <%= item.media.title %>
+                        </h3>
+
+                        <p>
+
+                            Tempo salvo:
+                            <%= item.time %>s
+
+                        </p>
+
+                    </div>
+
+                </a>
+
+                <% } %>
+
+            <% }) %>
+
+        </div>
+
+    </section>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    <%- include("../partes/footer") %>
+
+</body>
+</html>
